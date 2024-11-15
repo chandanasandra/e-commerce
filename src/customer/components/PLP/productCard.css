@@ -1,0 +1,32 @@
+.productCard {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: white;
+}
+
+.productCard:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 15px;
+}
+
+.productCard .product-details {
+    transition: transform 0.3s ease-out;
+}
+
+.productCard:hover .product-details {
+    transform: translateY(-0.3rem);
+}
+
+.productCard .image-container img {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.productCard:hover .image-container img {
+    transform: scale(1.05);
+}
+
+.productCard .badge {
+    font-size: 0.75rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 5px;
+}

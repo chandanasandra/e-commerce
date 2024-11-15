@@ -5,7 +5,7 @@ import { Button } from '@mui/material';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { mens_kurta } from '../../../data/mens_kurta';
 
-const HomeSectionCarousel = () => {
+const TrendingProducts = () => {
     const carouselRef = useRef(null);
 
     const responsive = {
@@ -21,6 +21,7 @@ const HomeSectionCarousel = () => {
 
     return (
         <div className='relative px-4 lg:px-8'>
+                    <div><h3>Trending Now</h3></div>
             <div className='relative p-5'>
                 <AliceCarousel
                     ref={carouselRef}
@@ -69,4 +70,4 @@ const HomeSectionCarousel = () => {
     )
 }
 
-export default HomeSectionCarousel;
+export default TrendingProducts;
