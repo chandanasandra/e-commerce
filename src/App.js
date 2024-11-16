@@ -1,25 +1,20 @@
-
 import './App.css';
-import Navigation from './customer/components/Navigation/Navigation';
-import MainCarousel from './customer/components/HomeCarousel/mainCarousel';
-import HomePage from './customer/components/HomePage/homePage';
-import Footer from './customer/components/Footer/footer';
-import ProductListingPage from './customer/components/PLP/productListingPage';
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import UserLayout from './layouts/UserLayout';
+import AdminLayout from './layouts/AdminLayout';
 
 function App() {
   return (
     <div className="">
-      <Navigation/>
-      <div>
-      {/* <HomePage/> */}
-      </div>
-      <div>
-      <ProductListingPage/>
-      </div>
-      <div>
-       <Footer/>
-        </div>
+      <Router>
+        <Routes>
+          {/* Public Layout */}
+          <Route path="/*" element={<UserLayout />} />
+
+          {/* Admin Layout */}
+          <Route path="/admin/*" element={<AdminLayout />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
