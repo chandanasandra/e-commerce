@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import Pagination from '../Pagination/Pagination';
-import { useEffect, useState} from "react";
+import Pagination from "../Pagination/Pagination";
+import { useEffect, useState } from "react";
 import { FiSearch } from "react-icons/fi";
 import { useDebounce } from "../../hooks/useDebounce";
 
-const OrderTable = ({ orders}) => {
+const OrderTable = ({ orders }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 7;
 
@@ -135,6 +135,36 @@ const OrderTable = ({ orders}) => {
               </tbody>
             </table>
             {/* Pagination Component */}
+            <div className="block sm:hidden">
+              {/* Display data in a stacked format */}
+              {currentOrders &&
+                currentOrders.map((order) => (
+                  <div className="p-4 border-b" key={"key:" + order}>
+                    <div>
+                      <strong>Order ID:</strong> {order.orderId}
+                    </div>
+                    <div>
+                      <strong>Customer Name:</strong> {order.customerName}
+                    </div>
+                    <div>
+                      <strong>Order Date:</strong> {order.orderDate}
+                    </div>
+                    <div>
+                      <strong>Total Amount:</strong> {order.totalAmount}
+                    </div>
+                    <div>
+                      <strong>Status:</strong> {order.orderStatus}
+                    </div>
+                    <div><Link
+                        to="/admin/orderdetails"
+                        state={order}
+                        className="font-medium text-blue-600 dark:text-blue-500 underline"
+                      >
+                        Edit
+                      </Link></div>
+                  </div>
+                ))}
+            </div>
             <Pagination
               currentPage={currentPage}
               setCurrentPage={setCurrentPage}
